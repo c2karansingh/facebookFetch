@@ -12,8 +12,10 @@
 
 		<script type="text/javascript" src="js/facebookInit.js"></script>
 
+		<div class="fb-login-button" onlogin="changeText();" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
+		<!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"> </fb:login-button> -->
 
-		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"> </fb:login-button>
+		<h1 id="instruction"></h1>
 
 	</body>
 
