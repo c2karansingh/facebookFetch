@@ -1,23 +1,20 @@
 <!DOCTYPE html>
-
 <html>
-	
-	<head>
+<head>
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<script type="text/javascript" src="js/facebookInit.js"></script>
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
 
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<title>login</title>
+<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" scope="public_profile,email,gender,age_range,permissions" data-use-continue-as="true"></div>
+<div id="status">
+</div>
 
-	</head>
-
-	<body>
-
-		<script type="text/javascript" src="js/facebookInit.js"></script>
-
-		<div class="fb-login-button" id="loginButton" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>
-		<!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"> </fb:login-button> -->
-
-		<h1 id="instruction" class="hideThis">Please Login</h1>
-
-	</body>
-
+</body>
 </html>
