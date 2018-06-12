@@ -1,7 +1,7 @@
 
-var statement="Please sign in!";
 window.fbAsyncInit = function() 
 {
+  var highlightTag= document.querySelector("#instruction");                
     FB.init
     (
     	{
@@ -19,42 +19,42 @@ window.fbAsyncInit = function()
 	(
 		function(response) 
 		{
-      console.log(response);
-		  
-      FB.getLoginStatus
-      (
-        
-        function(response)
-        {
-          if(response.authResponse)
-          {
-            FB.api
-            (
-              '/me'
-              , 
-              function(response) 
-              {
-                var userObject=JSON.stringify(response);
-                // statement=userObject["name"];
-                console.log(statement);
-                var highlightTag= document.querySelector("#instruction");                
-                highlightTag.textContent="Welcome "+response.name;
-                // console.log(JSON.stringify(response));
-              }
-            );
-          
 
+      if(response.authResponse)
+      {
+
+        FB.api
+        (
+        
+          '/me'
+        
+          , 
+        
+          function(response) 
+          {
+        
+            highlightTag.classList.remove("hideThis");
+            highlightTag.textContent="Welcome "+response.name;
 
           }
-          else
-          {
-            console.log("status != connected!");
-          } 
-        }
-      );
+
+        );
+        
+      }  
+      else
+        highlightTag.classList.remove("hideThis");
+		  
     }
 	);
 };
+
+
+
+
+
+
+
+
 
 
 (
@@ -70,18 +70,3 @@ window.fbAsyncInit = function()
     (document, 'script', 'facebook-jssdk')
 
 );
-
- var changeText= function()
-{
-  FB.getLoginStatus
-  (
-    function(response)
-    {
-      if(response.authResponse)
-      {
-        var highlightTag= document.querySelector("#instruction");
-        highlightTag.textContent="Welcome!";
-      }  
-    }
-  )
-}
