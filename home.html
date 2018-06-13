@@ -15,6 +15,21 @@
 		<h1 id="heading"></h1>		
 		<p id="mail"></p>
 
+		<button onclick="logOut()">Logout</button>
 
 	</body>
+	<script type="text/javascript">
+	function logOut()
+	{
+  		FB.logout
+  		(
+    		function(response)
+    		{
+      			window.location.href="http://localhost:8080/facebookFetch/index.html";
+    		}
+  		);
+
+	}
+
+	</script>
 </html>

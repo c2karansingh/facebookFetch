@@ -1,4 +1,7 @@
 
+
+
+
 window.fbAsyncInit = function() 
 {
 
@@ -14,7 +17,10 @@ window.fbAsyncInit = function()
     
 
   FB.AppEvents.logPageView();   
-    
+  
+
+
+
 	FB.getLoginStatus
 	(
 		function(response) 
@@ -108,8 +114,6 @@ window.fbAsyncInit = function()
 
 
 
-
-
 (
 	function(d, s, id)
 	{
@@ -123,3 +127,7 @@ window.fbAsyncInit = function()
     (document, 'script', 'facebook-jssdk')
 
 );
+
+
+
+
